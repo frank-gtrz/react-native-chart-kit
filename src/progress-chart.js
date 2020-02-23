@@ -119,7 +119,10 @@ class ProgressChart extends AbstractChart {
                     key={Math.random()}
                     d={pie.curves[0].sector.path.print()}
                     strokeWidth={16}
-                    stroke={this.props.chartColors[i]}
+                    stroke={this.props.chartConfig.color(
+                      (i / pies.length) * 0.5 + 0.5,
+                      i
+                    )}
                   />
                 );
               })}
@@ -133,10 +136,7 @@ class ProgressChart extends AbstractChart {
                     strokeLinejoin="round"
                     d={pie.curves[0].sector.path.print()}
                     strokeWidth={16}
-                    stroke={this.props.chartConfig.color(
-                      (i / pies.length) * 0.5 + 0.5,
-                      i
-                    )}
+                    stroke={this.props.chartColors[i]}
                   />
                 );
               })}

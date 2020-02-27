@@ -78,6 +78,7 @@ class ProgressChart extends AbstractChart {
                   12 * 2
                 }
                 {...this.getPropsForLabels()}
+                fill={this.props.textColor}
               >
                 {withLabel(i)
                   ? `${data.labels[i]} ${Math.round(100 * data.data[i])}%`
